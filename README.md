@@ -4,7 +4,7 @@ Deep Residual Networks for image classification on the CIFAR10 dataset.
 Run this command to check whether everything is working as expected.
 
 ```
-python main.py -w 1 -o sgd -d gpu -e 5 -lr 0.1 -dp data -wp weights.pth
+python main.py -w 1 -o sgd -d gpu -lr 0.1 -dp data -wp weights.pth
 ```
 See what these commands do.
 
@@ -13,8 +13,9 @@ usage: main.py [-h] -w WORKERS -o OPTIMISER -d DEVICE -e EPOCHS [-lr LEARNING_RA
 
 optional arguments:
   -h, --help            show this help message and exit
-  -w WORKERS, --workers WORKERS
-                        number of workers for the data loader
+
+  -in ITERATION_NUMBER, --iter ITERATION_NUMBER
+                        iteration number to track the different experiments 
   -o OPTIMISER, --optimiser OPTIMISER
                         optimizer for training
   -d DEVICE, --device DEVICE
@@ -31,4 +32,8 @@ optional arguments:
                         path to the dataset
   -wp WEIGHT_PATH, --weight-path WEIGHT_PATH
                         path to weights of the trained model
+  -bl NO_OF_BLOCKS, --channels NO_OF_BLOCKS
+                        number of blocks in each layer
+  -ch NO_OF_CHANNELS, --channels NO_OF_CHANNELS
+                        number of channels in each layer 
 ```
