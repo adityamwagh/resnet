@@ -129,7 +129,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("-in", "--iter", type=str, required=True, help="iteration number to track the different experiments")
     parser.add_argument("-o", "--optimiser", type=str, required=True, help="optimizer for training")
-    parser.add_argument("-d", "--device", type=str, required=True, help="device to train on")
+    parser.add_argument("-d", "--device", type=str, required=False, default="gpu", help="device to train on")
     parser.add_argument("-e", "--epochs", type=int, required=False, default=120, help="number of epochs to train for")
     parser.add_argument("-lr", "--learning-rate", type=float, required=False, default=0.1, help="learning rate for the optimizer",)
     parser.add_argument("-m", "--momentum", type=float, required=False, default=0.9, help="momentum value for optimizer if applicable")
@@ -140,6 +140,7 @@ if __name__ == "__main__":
     parser.add_argument("ch", "--channels", nargs=4, required=True, type = int, help="number of channels in each layer")
 
     args = parser.parse_args()
+
 
     """
     HYPERPARAMETERS
@@ -203,7 +204,7 @@ if __name__ == "__main__":
     np.save((args.iter+'_train_accuracy.npy'), train_accuracy)
     np.save((args.iter+'_test_accuracy.npy'), test_accuracy)
 
-    PATH_MODEL_WEIGHTS = args.weight_path
+    PATH_MODEL_WEIGHTS = args.weight_path + args.iter
     torch.save(resnet_model.state_dict(), PATH_MODEL_WEIGHTS)
     print("Model Saved\n")
     print("Final Training Accuracy: %.3f | Final Test Accuracy: %.3f\n"%(train_accuracy[-1], test_accuracy[-1]))
