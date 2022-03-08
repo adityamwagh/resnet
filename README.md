@@ -1,4 +1,3 @@
-# Deep Residual Networks
 Deep Residual Networks for image classification on the CIFAR10 dataset.
 
 Run this command to check whether everything is working as expected.
@@ -32,11 +31,9 @@ optional arguments:
                         path to the dataset
   -wp WEIGHT_PATH, --weight-path WEIGHT_PATH
                         path to weights of the trained model
-<<<<<<< HEAD
   -bl NO_OF_BLOCKS, --channels NO_OF_BLOCKS
                         number of blocks in each layer
   -ch NO_OF_CHANNELS, --channels NO_OF_CHANNELS
                         number of channels in each layer 
-=======
->>>>>>> a8cd98f7432052474bba54708decdfbf2635fa1d
+
 ```
