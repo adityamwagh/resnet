@@ -2,7 +2,7 @@
 Deep Residual Networks for image classification on the CIFAR10 dataset.
 
 Run this command to check whether everything is working as expected.
-
+#just checking
 ```
 python main.py -w 1 -o sgd -d gpu -e 5 -lr 0.1 -dp data -wp weights.pth
 ```
