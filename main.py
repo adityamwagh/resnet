@@ -1,8 +1,8 @@
 import argparse
+import os
 import time
 from time import sleep
 
-import matplotlib.pyplot as plt
 import numpy as np
 import torch
 import torch.nn as nn
@@ -10,83 +10,66 @@ import torch.optim as optim
 import torchvision
 import torchvision.transforms as transforms
 from torch.utils.data import DataLoader
-from tqdm import tqdm
 
 from project1_model import project1_model
+
 
 # Defining the Training Loop
 def train_test_model(epochs, train_loader, test_loader, model, loss_fn, optimizer, train_loss_values, train_accuracy):
 
     model.train()
     for epoch in range(1, epochs + 1):
-        with tqdm(train_loader, unit="batches") as train_data_loader:
+            
+        running_loss = 0
+        correct = 0
+        total = 0
 
-            running_loss = 0
-            correct = 0
-            total = 0
+        for imgs, labels in train_loader:
 
-            for imgs, labels in train_data_loader:
+            X, y = imgs.to(device), labels.to(device)
+            pred = model(X)
+            loss = loss_fn(pred, y)
 
-                train_data_loader.set_description(f"Training: Epoch {epoch}/{epochs}")
+            # Back prop
+            optimizer.zero_grad()
+            loss.backward()
+            optimizer.step()
 
-                X, y = imgs.to(device), labels.to(device)
-                pred = model(X)
-                loss = loss_fn(pred, y)
+            running_loss += loss.item()
+            _, predicted = pred.max(1)
+            total += labels.size(0)
+            correct += predicted.eq(labels.to(device)).sum().item()
 
-                # Back prop
-                optimizer.zero_grad()
-                loss.backward()
-                optimizer.step()
-
-                running_loss += loss.item()
-                _, predicted = pred.max(1)
-                total += labels.size(0)
-                correct += predicted.eq(labels.to(device)).sum().item()
-
-                # this line prints running loss and accuracy as the epoch progresses
-                train_data_loader.set_postfix(loss=loss.item(), accuracy=100.0 * (correct / total))
-                sleep(0.1)
-
-            # this metric is not ideal, since it's the average loss over all batches.
-            # We need the loss at the last iteration of data loader
-            train_loss = running_loss / len(train_dataloader)
-            train_loss_values.append(train_loss)
-            accu = 100.0 * correct / total
-            train_accuracy.append(accu)
+        train_loss = running_loss / len(train_dataloader)
+        train_loss_values.append(train_loss)
+        accu = 100.0 * correct / total
+        train_accuracy.append(accu)
 
         model.eval()
-        with tqdm(test_loader, unit="batches") as test_data_loader:
 
-            running_loss = 0.0
-            correct = 0
-            total = 0
+        running_loss = 0.0
+        correct = 0
+        total = 0
 
-            for imgs, labels in test_data_loader:
+        for imgs, labels in test_loader:
 
-                test_data_loader.set_description(f"Testing: Epoch {epoch}/{epochs}")
+            X, y = imgs.to(device), labels.to(device)
+            pred = model(X)
 
-                X, y = imgs.to(device), labels.to(device)
-                pred = model(X)
+            # compute test Loss
+            loss = loss_fn(pred, y)
+            running_loss += loss.item()
+            _, predicted = torch.max(pred.data, 1)
+            total += labels.size(0)
 
-                # compute test Loss
-                loss = loss_fn(pred, y)
-                running_loss += loss.item()
-                _, predicted = torch.max(pred.data, 1)
-                total += labels.size(0)
+            # correct += (predicted == labels).sum().item()
+            correct += predicted.eq(labels.to(device)).sum().item()
 
-                # correct += (predicted == labels).sum().item()
-                correct += predicted.eq(labels.to(device)).sum().item()
 
-                # this line prints running loss and accuracy as the epoch progresses
-                test_data_loader.set_postfix(loss=loss.item(), accuracy=100.0 * (correct / total))
-                sleep(0.1)
-
-            # this metric is not ideal, since it's the average loss over all batches.
-            # We need the loss at the last iteration of data loader
-            test_loss = running_loss / len(test_dataloader)
-            test_loss_values.append(test_loss)
-            accu = 100.0 * correct / total
-            test_accuracy.append(accu)
+        test_loss = running_loss / len(test_dataloader)
+        test_loss_values.append(test_loss)
+        accu = 100.0 * correct / total
+        test_accuracy.append(accu)
 
 
 def select_optimiser(argument, model):
@@ -106,7 +89,7 @@ def select_optimiser(argument, model):
         return optim.Adadelta(model.parameters(), lr=args.learning_rate, weight_decay=args.weight_decay)
 
     if argument == "adam":
-        return optim.Adam(model.parameters(), lr=args.learning_rate, weight_decay=args.weight_decay)
+        return optim.Adam(model.parameters(), lr=0.001, weight_decay=args.weight_decay)
 
 
 if __name__ == "__main__":
@@ -116,7 +99,7 @@ if __name__ == "__main__":
     """
     parser = argparse.ArgumentParser()
     parser.add_argument(
-        "-en", "--experiment-number", type=str, required=True, help="number to track the different experiments"
+        "-en", "--experiment_number", type=str, required=True, help="number to track the different experiments"
     )
     parser.add_argument("-o", "--optimiser", type=str, required=True, help="optimizer for training")
     parser.add_argument("-d", "--device", type=str, required=False, default="gpu", help="device to train on")
@@ -146,9 +129,10 @@ if __name__ == "__main__":
         "--weight-path",
         type=str,
         required=False,
-        default="_weights.pth",
+        default="_weight.pth",
         help="path to weights of the trained model",
     )
+
     parser.add_argument("-b", "--blocks", nargs=4, required=True, type=int, help="number of blocks in each layer")
     parser.add_argument("-c", "--channels", nargs=4, required=True, type=int, help="number of channels in each layer")
     args = parser.parse_args()
@@ -210,12 +194,14 @@ if __name__ == "__main__":
 
     ## Save the train_loss_values and test_loss_values us np.save function
 
-    np.save((args.experiment_number + "_train_loss_values.npy"), train_loss_values)
-    np.save((args.experiment_number + "_test_loss_values.npy"), test_loss_values)
-    np.save((args.experiment_number + "_train_accuracy.npy"), train_accuracy)
-    np.save((args.experiment_number + "_test_accuracy.npy"), test_accuracy)
+    os.makedirs(os.path.join(os.getcwd(), "metrics"), exist_ok=True)
 
-    PATH_MODEL_WEIGHTS = args.experiment_number + args.weight_path
+    np.save(os.path.join("metrics",args.experiment_number + "train_loss.npy"), train_loss_values)
+    np.save(os.path.join("metrics",args.experiment_number + "test_loss.npy"), test_loss_values)
+    np.save(os.path.join("metrics",args.experiment_number + "train_accuracy.npy"), train_accuracy)
+    np.save(os.path.join("metrics",args.experiment_number + "test_accuracy.npy"), test_accuracy)
+
+    PATH_MODEL_WEIGHTS =  "./weights/" + args.experiment_number + args.weight_path
     torch.save(resnet_model.state_dict(), PATH_MODEL_WEIGHTS)
 
     print("Model Saved\n")
