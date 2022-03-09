@@ -99,14 +99,7 @@ if __name__ == "__main__":
     parser.add_argument("-o", "--optimiser", type=str, required=True, help="optimizer for training")
     parser.add_argument("-d", "--device", type=str, required=False, default="gpu", help="device to train on")
     parser.add_argument("-e", "--epochs", type=int, required=False, default=120, help="number of epochs to train for")
-    parser.add_argument(
-        "-lr",
-        "--learning-rate",
-        type=float,
-        required=False,
-        default=0.1,
-        help="learning rate for the optimizer",
-    )
+    parser.add_argument("-lr","--learning-rate",type=float,required=False,default=0.1,help="learning rate for the optimizer")
     parser.add_argument("-m", "--momentum", type=float, required=False, default=0.9, help="momentum value for optimizer if applicable")
     parser.add_argument(
         "-wd",
