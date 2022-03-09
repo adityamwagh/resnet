@@ -219,7 +219,7 @@ if __name__ == "__main__":
     torch.save(resnet_model.state_dict(), PATH_MODEL_WEIGHTS)
 
     print("Model Saved\n")
-    print("Final Training Accuracy: %.3f | Final Test Accuracy: %.3f\n" % (train_accuracy[-1], test_accuracy[-1]))
-    print("The following accuracy is achiever with the following Settings")
-    print("Number of Blocks in each layer: ", blocks, "\n", "Number of Channels in each layer: ", channels)
-    print("Optimiser: ", args.optimiser, "\n", "Learning Rate: ", args.learning_rate, "\n")
+    print(f"Final Training Accuracy: {train_accuracy[-1]: .3f}| Final Test Accuracy: {test_accuracy[-1]: .3f}\n")
+    print("This accuracy is achieved with the following Settings")
+    print(f"Number of Blocks in each layer: {blocks}\n Number of Channels in each layer: {channels}")
+    print(f"Optimiser: {args.optimiser}\n Learning Rate: {args.learning_rate}")
