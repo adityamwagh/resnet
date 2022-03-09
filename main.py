@@ -124,15 +124,6 @@ if __name__ == "__main__":
         help="weight decay value for the optimizer if applicable",
     )
     parser.add_argument("-dp", "--data-path", type=str, required=True, help="path to the dataset")
-    parser.add_argument(
-        "-wp",
-        "--weight-path",
-        type=str,
-        required=False,
-        default="_weight.pth",
-        help="path to weights of the trained model",
-    )
-
     parser.add_argument("-b", "--blocks", nargs=4, required=True, type=int, help="number of blocks in each layer")
     parser.add_argument("-c", "--channels", nargs=4, required=True, type=int, help="number of channels in each layer")
     args = parser.parse_args()
@@ -200,8 +191,9 @@ if __name__ == "__main__":
     np.save(os.path.join("metrics",args.experiment_number + "test_loss.npy"), test_loss_values)
     np.save(os.path.join("metrics",args.experiment_number + "train_accuracy.npy"), train_accuracy)
     np.save(os.path.join("metrics",args.experiment_number + "test_accuracy.npy"), test_accuracy)
-
-    PATH_MODEL_WEIGHTS =  "./weights/" + args.experiment_number + args.weight_path
+    
+    os.makedirs(os.path.join(os.getcwd(), "weights"), exist_ok=True)
+    PATH_MODEL_WEIGHTS = (os.path.join("weights",args.experiment_number + "_weight.PTH")
     torch.save(resnet_model.state_dict(), PATH_MODEL_WEIGHTS)
 
     print("Model Saved\n")
