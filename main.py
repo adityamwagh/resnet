@@ -19,7 +19,7 @@ def train_test_model(epochs, train_loader, test_loader, model, loss_fn, optimize
 
     model.train()
     for epoch in range(1, epochs + 1):
-            
+
         running_loss = 0
         correct = 0
         total = 0
@@ -65,7 +65,6 @@ def train_test_model(epochs, train_loader, test_loader, model, loss_fn, optimize
             # correct += (predicted == labels).sum().item()
             correct += predicted.eq(labels.to(device)).sum().item()
 
-
         test_loss = running_loss / len(test_dataloader)
         test_loss_values.append(test_loss)
         accu = 100.0 * correct / total
@@ -78,9 +77,7 @@ def select_optimiser(argument, model):
         return optim.SGD(model.parameters(), lr=args.learning_rate, momentum=0.9, weight_decay=args.weight_decay)
 
     if argument == "sgd_nest":
-        return optim.SGD(
-            model.parameters(), lr=args.learning_rate, momentum=0.9, weight_decay=args.weight_decay, nesterov=True
-        )
+        return optim.SGD(model.parameters(), lr=args.learning_rate, momentum=0.9, weight_decay=args.weight_decay, nesterov=True)
 
     if argument == "adagrad":
         return optim.Adagrad(model.parameters(), lr=args.learning_rate, weight_decay=args.weight_decay)
@@ -98,9 +95,7 @@ if __name__ == "__main__":
     ARGUMENT PROVISION
     """
     parser = argparse.ArgumentParser()
-    parser.add_argument(
-        "-en", "--experiment_number", type=str, required=True, help="number to track the different experiments"
-    )
+    parser.add_argument("-en", "--experiment_number", type=str, required=True, help="number to track the different experiments")
     parser.add_argument("-o", "--optimiser", type=str, required=True, help="optimizer for training")
     parser.add_argument("-d", "--device", type=str, required=False, default="gpu", help="device to train on")
     parser.add_argument("-e", "--epochs", type=int, required=False, default=120, help="number of epochs to train for")
@@ -112,9 +107,7 @@ if __name__ == "__main__":
         default=0.1,
         help="learning rate for the optimizer",
     )
-    parser.add_argument(
-        "-m", "--momentum", type=float, required=False, default=0.9, help="momentum value for optimizer if applicable"
-    )
+    parser.add_argument("-m", "--momentum", type=float, required=False, default=0.9, help="momentum value for optimizer if applicable")
     parser.add_argument(
         "-wd",
         "--weight-decay",
@@ -177,9 +170,7 @@ if __name__ == "__main__":
     train_accuracy = []
     test_accuracy = []
 
-    train_test_model(
-        epochs, train_dataloader, test_dataloader, resnet_model, loss, optimizer, train_loss_values, train_accuracy
-    )
+    train_test_model(epochs, train_dataloader, test_dataloader, resnet_model, loss, optimizer, train_loss_values, train_accuracy)
 
     print("Finished Training\n")
 
@@ -187,13 +178,13 @@ if __name__ == "__main__":
 
     os.makedirs(os.path.join(os.getcwd(), "metrics"), exist_ok=True)
 
-    np.save(os.path.join("metrics",args.experiment_number + "train_loss.npy"), train_loss_values)
-    np.save(os.path.join("metrics",args.experiment_number + "test_loss.npy"), test_loss_values)
-    np.save(os.path.join("metrics",args.experiment_number + "train_accuracy.npy"), train_accuracy)
-    np.save(os.path.join("metrics",args.experiment_number + "test_accuracy.npy"), test_accuracy)
-    
+    np.save(os.path.join("metrics", args.experiment_number + "_train_loss.npy"), train_loss_values)
+    np.save(os.path.join("metrics", args.experiment_number + "_test_loss.npy"), test_loss_values)
+    np.save(os.path.join("metrics", args.experiment_number + "_train_accuracy.npy"), train_accuracy)
+    np.save(os.path.join("metrics", args.experiment_number + "_test_accuracy.npy"), test_accuracy)
+
     os.makedirs(os.path.join(os.getcwd(), "weights"), exist_ok=True)
-    PATH_MODEL_WEIGHTS = (os.path.join("weights",args.experiment_number + "_weight.PTH")
+    PATH_MODEL_WEIGHTS = os.path.join("weights", args.experiment_number + "_weight.pth")
     torch.save(resnet_model.state_dict(), PATH_MODEL_WEIGHTS)
 
     print("Model Saved\n")
