@@ -14,6 +14,7 @@ from torch.utils.data import DataLoader
 from project1_model import project1_model
 
 
+
 # Defining the Training Loop
 def train_test_model(epochs, train_loader, test_loader, model, loss_fn, optimizer, train_loss_values, train_accuracy):
 
