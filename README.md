@@ -47,11 +47,12 @@ conda install pytorch torchvision matplotlib cudatoolkit=11.3 -c pytorch
 | `-o`  or `--optimizer`                | `required` | `N/A`          | **Required**. Your API key                            |
 | `-d`  or `--device`                   | `required` | `gpu`          | **Required**. Your API key                            |
 | `-lr` or `--learning-rate`            | `required` | `0.1`          | **Required**. Your API key                            |
-| `-m`  or `--momentum`                 | `required` | `0.9`          | **Required**. Your API key                            |
+| `-mo`  or `--momentum`                | `required` | `0.9`          | **Required**. Your API key                            |
 | `-wd` or `--weight-decay`             | `required` | `5e-4`         | **Required**. Your API key                            |
 | `-dp` or `--data-path`                | `required` | `./data`       | **Required**. Your API key                            |
-| `-b`  or `--blocks`                   | `required` | `N/A`          | **Required**. Your API key                            |
-| `-c`  or `--channels`                 | `required` | `N/A`          | **Required**. Your API key                            |
+| `-b`  or `--blocks`                   | `required` | `required`     | **Required**. Your API key                            |
+| `-c`  or `--channels`                 | `required` | `required`     | **Required**. Your API key                            |
+| '-m'  or '--model'                    | `required` | 'resnet'       | **Required**. Your API key                            |
 
 ```bash
 python main.py \
@@ -73,6 +74,8 @@ usage: main.py [-h] -en EXPERIMENT_NUMBER -o OPTIMISER [-d DEVICE] [-e EPOCHS] [
                           number to track the different experiments
   -o OPTIMISER, --optimiser OPTIMISER
                           optimizer for training
+  -m MODEL, --model MODEL
+                          model to train
   -d DEVICE, --device DEVICE
                           device to train on
   -e EPOCHS, --epochs EPOCHS

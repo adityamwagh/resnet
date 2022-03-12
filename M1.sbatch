@@ -20,19 +20,14 @@ singularity exec --nv \
 singularity exec --nv \
             --overlay /scratch/vg2097/pytorch-example/my_pytorch.ext3:ro \
             /scratch/work/public/singularity/cuda11.2.2-cudnn8-devel-ubuntu20.04.sif \
-            /bin/bash -c "source /ext3/env.sh; python main.py -en 2 -o sgd_nest -dp ./data -b 2 2 2 2 -c 54 96 188 324"
+            /bin/bash -c "source /ext3/env.sh; python main.py -en 2 -o adagrad -dp ./data -b 2 2 2 2 -c 54 96 188 324"
 
 singularity exec --nv \
             --overlay /scratch/vg2097/pytorch-example/my_pytorch.ext3:ro \
             /scratch/work/public/singularity/cuda11.2.2-cudnn8-devel-ubuntu20.04.sif \
-            /bin/bash -c "source /ext3/env.sh; python main.py -en 3 -o adagrad -dp ./data -b 2 2 2 2 -c 54 96 188 324"
+            /bin/bash -c "source /ext3/env.sh; python main.py -en 3 -o adadelta -dp ./data -b 2 2 2 2 -c 54 96 188 324"
 
 singularity exec --nv \
             --overlay /scratch/vg2097/pytorch-example/my_pytorch.ext3:ro \
             /scratch/work/public/singularity/cuda11.2.2-cudnn8-devel-ubuntu20.04.sif \
-            /bin/bash -c "source /ext3/env.sh; python main.py -en 4 -o adadelta -dp ./data -b 2 2 2 2 -c 54 96 188 324"
-
-singularity exec --nv \
-            --overlay /scratch/vg2097/pytorch-example/my_pytorch.ext3:ro \
-            /scratch/work/public/singularity/cuda11.2.2-cudnn8-devel-ubuntu20.04.sif \
-            /bin/bash -c "source /ext3/env.sh; python main.py -en 5 -o adam -dp ./data -b 2 2 2 2 -c 54 96 188 324"
+            /bin/bash -c "source /ext3/env.sh; python main.py -en 4 -o adam -dp ./data -b 2 2 2 2 -c 54 96 188 324"

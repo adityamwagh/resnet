@@ -9,7 +9,7 @@ import torchvision
 import torchvision.transforms as transforms
 from torch.utils.data import DataLoader
 
-from project1_model import project1_model
+from project1_model import Resnet18, Resnet18_leaky
 
 
 # Defining the Training Loop
@@ -24,6 +24,14 @@ def train_test_model(epochs, train_loader, test_loader, model, loss_fn, optimize
         correct = 0
         total = 0
 
+# Scheduling the Learning Rate manually
+        if(epoch>90 and epoch<105):
+            optimizer.param_groups[0]['lr'] = 0.01
+        elif(epoch>105 and epoch<120):
+            optimizer.param_groups[0]['lr'] = 0.001
+
+        print("Epoch: {}".format(epoch))
+
         for imgs, labels in train_loader:
 
             X, y = imgs.to(device), labels.to(device)
@@ -31,6 +39,7 @@ def train_test_model(epochs, train_loader, test_loader, model, loss_fn, optimize
             train_loss = loss_fn(train_pred, y)
 
             # Back prop
+            
             optimizer.zero_grad()
             train_loss.backward()
             optimizer.step()
@@ -111,14 +120,16 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("-en", "--experiment_number", type=str, required=True, help="number to track the different experiments")
     parser.add_argument("-o", "--optimiser", type=str, required=True, help="optimizer for training")
+    parser.add_argument("-m", "--model", type=str, required=False, default = "Resnet", help="model to be used")
     parser.add_argument("-d", "--device", type=str, required=False, default="gpu", help="device to train on, default is gpu")
     parser.add_argument("-e", "--epochs", type=int, required=False, default=120, help="number of epochs to train for, default is 120")
     parser.add_argument("-lr", "--learning-rate", type=float, required=False, default=0.1, help="learning rate for the optimizer, default is 0.1")
-    parser.add_argument("-m", "--momentum", type=float, required=False, default=0.9, help="momentum value for optimizer if applicable, default is 0.9")
+    parser.add_argument("-mo", "--momentum", type=float, required=False, default=0.9, help="momentum value for optimizer if applicable, default is 0.9")
     parser.add_argument("-wd", "--weight-decay", type=float, required=False, default=5e-4, help="weight decay value for the optimizer if applicable, default is 5e-4")
     parser.add_argument("-dp", "--data-path", type=str, required=True, help="path to the dataset")
     parser.add_argument("-b", "--blocks", nargs=4, required=True, type=int, help="number of blocks in each layer")
     parser.add_argument("-c", "--channels", nargs=4, required=True, type=int, help="number of channels in each layer")
+
     args = parser.parse_args()
 
     """
@@ -147,7 +158,11 @@ if __name__ == "__main__":
     loss = nn.CrossEntropyLoss()
 
     # model initialization
-    resnet_model = project1_model(blocks, channels).to(device)
+    if args.model=="leaky":
+        resnet_model = Resnet18_leaky(blocks, channels).to(device)
+    else:
+        resnet_model = Resnet18(blocks, channels).to(device)
+
     optimizer = select_optimiser(args.optimiser, resnet_model)
 
     """
