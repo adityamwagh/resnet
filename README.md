@@ -8,7 +8,7 @@ Pytorch implementation of ResNet18 for CIFAR10 classification.
 It's a joint work between Aditya, Vijay and Yash
 
 - [Aditya Wagh](https://www.github.com/adityamwagh)
-- [Vijay Gohil](https://www.github.com/vraj130)
+- [Vijayraj Gohil](https://www.github.com/vraj130)
 - [Yash Patel](https://www.github.com/yyashpatel)
 
 
