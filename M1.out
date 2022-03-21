@@ -1,0 +1,632 @@
+Files already downloaded and verified
+Files already downloaded and verified
+Started Training
+
+Epoch: 1
+Epoch: 2
+Epoch: 3
+Epoch: 4
+Epoch: 5
+Epoch: 6
+Epoch: 7
+Epoch: 8
+Epoch: 9
+Epoch: 10
+Epoch 10/120 | Train Loss: 0.5026252531944333 | Train Accuracy: 82.624 %
+Epoch 10/120 | Test Loss: 0.6236709455016313 | Test Accuracy: 79.15 %
+Epoch: 11
+Epoch: 12
+Epoch: 13
+Epoch: 14
+Epoch: 15
+Epoch: 16
+Epoch: 17
+Epoch: 18
+Epoch: 19
+Epoch: 20
+Epoch 20/120 | Train Loss: 0.40752669947836406 | Train Accuracy: 86.212 %
+Epoch 20/120 | Test Loss: 0.5553248089969538 | Test Accuracy: 81.77 %
+Epoch: 21
+Epoch: 22
+Epoch: 23
+Epoch: 24
+Epoch: 25
+Epoch: 26
+Epoch: 27
+Epoch: 28
+Epoch: 29
+Epoch: 30
+Epoch 30/120 | Train Loss: 0.3729967917780132 | Train Accuracy: 87.28 %
+Epoch 30/120 | Test Loss: 0.46014507855199704 | Test Accuracy: 84.78 %
+Epoch: 31
+Epoch: 32
+Epoch: 33
+Epoch: 34
+Epoch: 35
+Epoch: 36
+Epoch: 37
+Epoch: 38
+Epoch: 39
+Epoch: 40
+Epoch 40/120 | Train Loss: 0.356067027582232 | Train Accuracy: 87.912 %
+Epoch 40/120 | Test Loss: 0.5325791161910743 | Test Accuracy: 82.92 %
+Epoch: 41
+Epoch: 42
+Epoch: 43
+Epoch: 44
+Epoch: 45
+Epoch: 46
+Epoch: 47
+Epoch: 48
+Epoch: 49
+Epoch: 50
+Epoch 50/120 | Train Loss: 0.3502752200493117 | Train Accuracy: 88.106 %
+Epoch 50/120 | Test Loss: 0.536761727302697 | Test Accuracy: 83.17 %
+Epoch: 51
+Epoch: 52
+Epoch: 53
+Epoch: 54
+Epoch: 55
+Epoch: 56
+Epoch: 57
+Epoch: 58
+Epoch: 59
+Epoch: 60
+Epoch 60/120 | Train Loss: 0.3398900524048549 | Train Accuracy: 88.342 %
+Epoch 60/120 | Test Loss: 0.5556600773410433 | Test Accuracy: 80.72 %
+Epoch: 61
+Epoch: 62
+Epoch: 63
+Epoch: 64
+Epoch: 65
+Epoch: 66
+Epoch: 67
+Epoch: 68
+Epoch: 69
+Epoch: 70
+Epoch 70/120 | Train Loss: 0.33366361550053064 | Train Accuracy: 88.682 %
+Epoch 70/120 | Test Loss: 0.5344375022657358 | Test Accuracy: 83.04 %
+Epoch: 71
+Epoch: 72
+Epoch: 73
+Epoch: 74
+Epoch: 75
+Epoch: 76
+Epoch: 77
+Epoch: 78
+Epoch: 79
+Epoch: 80
+Epoch 80/120 | Train Loss: 0.33016689426606266 | Train Accuracy: 88.74 %
+Epoch 80/120 | Test Loss: 0.5797861278246922 | Test Accuracy: 82.04 %
+Epoch: 81
+Epoch: 82
+Epoch: 83
+Epoch: 84
+Epoch: 85
+Epoch: 86
+Epoch: 87
+Epoch: 88
+Epoch: 89
+Epoch: 90
+Epoch 90/120 | Train Loss: 0.33155866900978187 | Train Accuracy: 88.67 %
+Epoch 90/120 | Test Loss: 0.4228037709643127 | Test Accuracy: 85.82 %
+Epoch: 91
+Epoch: 92
+Epoch: 93
+Epoch: 94
+Epoch: 95
+Epoch: 96
+Epoch: 97
+Epoch: 98
+Epoch: 99
+Epoch: 100
+Epoch 100/120 | Train Loss: 0.05873027266910695 | Train Accuracy: 98.08 %
+Epoch 100/120 | Test Loss: 0.22993875619403686 | Test Accuracy: 93.13 %
+Epoch: 101
+Epoch: 102
+Epoch: 103
+Epoch: 104
+Epoch: 105
+Epoch: 106
+Epoch: 107
+Epoch: 108
+Epoch: 109
+Epoch: 110
+Epoch 110/120 | Train Loss: 0.020316575099464 | Train Accuracy: 99.426 %
+Epoch 110/120 | Test Loss: 0.20976545748591519 | Test Accuracy: 94.23 %
+Epoch: 111
+Epoch: 112
+Epoch: 113
+Epoch: 114
+Epoch: 115
+Epoch: 116
+Epoch: 117
+Epoch: 118
+Epoch: 119
+Epoch: 120
+Epoch 120/120 | Train Loss: 0.013444020240174612 | Train Accuracy: 99.708 %
+Epoch 120/120 | Test Loss: 0.21577661680235605 | Test Accuracy: 94.49 %
+Finished Training
+
+Saved model weights to weights/1_weights.pth
+Final Training Accuracy:  99.708 % | Final Test Accuracy:  94.490 %
+
+This accuracy is achieved with the following Settings
+Number of Blocks in each layer: [2, 2, 2, 2]
+ Number of Channels in each layer: [54, 96, 188, 324]
+Optimiser: sgd
+ Learning Rate: 0.1
+Files already downloaded and verified
+Files already downloaded and verified
+Started Training
+
+Epoch: 1
+Epoch: 2
+Epoch: 3
+Epoch: 4
+Epoch: 5
+Epoch: 6
+Epoch: 7
+Epoch: 8
+Epoch: 9
+Epoch: 10
+Epoch 10/120 | Train Loss: 0.634090090727867 | Train Accuracy: 78.016 %
+Epoch 10/120 | Test Loss: 0.7277644944798415 | Test Accuracy: 74.99 %
+Epoch: 11
+Epoch: 12
+Epoch: 13
+Epoch: 14
+Epoch: 15
+Epoch: 16
+Epoch: 17
+Epoch: 18
+Epoch: 19
+Epoch: 20
+Epoch 20/120 | Train Loss: 0.4563965734923282 | Train Accuracy: 84.304 %
+Epoch 20/120 | Test Loss: 0.6473794057490719 | Test Accuracy: 78.25 %
+Epoch: 21
+Epoch: 22
+Epoch: 23
+Epoch: 24
+Epoch: 25
+Epoch: 26
+Epoch: 27
+Epoch: 28
+Epoch: 29
+Epoch: 30
+Epoch 30/120 | Train Loss: 0.3853236576708991 | Train Accuracy: 86.598 %
+Epoch 30/120 | Test Loss: 0.4949227406340799 | Test Accuracy: 83.24 %
+Epoch: 31
+Epoch: 32
+Epoch: 33
+Epoch: 34
+Epoch: 35
+Epoch: 36
+Epoch: 37
+Epoch: 38
+Epoch: 39
+Epoch: 40
+Epoch 40/120 | Train Loss: 0.34260664304808885 | Train Accuracy: 88.128 %
+Epoch 40/120 | Test Loss: 0.4722412791411588 | Test Accuracy: 84.33 %
+Epoch: 41
+Epoch: 42
+Epoch: 43
+Epoch: 44
+Epoch: 45
+Epoch: 46
+Epoch: 47
+Epoch: 48
+Epoch: 49
+Epoch: 50
+Epoch 50/120 | Train Loss: 0.309664125828182 | Train Accuracy: 89.304 %
+Epoch 50/120 | Test Loss: 0.43653896925555674 | Test Accuracy: 85.48 %
+Epoch: 51
+Epoch: 52
+Epoch: 53
+Epoch: 54
+Epoch: 55
+Epoch: 56
+Epoch: 57
+Epoch: 58
+Epoch: 59
+Epoch: 60
+Epoch 60/120 | Train Loss: 0.2865707508819487 | Train Accuracy: 90.204 %
+Epoch 60/120 | Test Loss: 0.41776027146038736 | Test Accuracy: 85.88 %
+Epoch: 61
+Epoch: 62
+Epoch: 63
+Epoch: 64
+Epoch: 65
+Epoch: 66
+Epoch: 67
+Epoch: 68
+Epoch: 69
+Epoch: 70
+Epoch 70/120 | Train Loss: 0.2669056644639396 | Train Accuracy: 90.816 %
+Epoch 70/120 | Test Loss: 0.49145547495146463 | Test Accuracy: 84.23 %
+Epoch: 71
+Epoch: 72
+Epoch: 73
+Epoch: 74
+Epoch: 75
+Epoch: 76
+Epoch: 77
+Epoch: 78
+Epoch: 79
+Epoch: 80
+Epoch 80/120 | Train Loss: 0.25333407502192673 | Train Accuracy: 91.16 %
+Epoch 80/120 | Test Loss: 0.45065228413244723 | Test Accuracy: 85.54 %
+Epoch: 81
+Epoch: 82
+Epoch: 83
+Epoch: 84
+Epoch: 85
+Epoch: 86
+Epoch: 87
+Epoch: 88
+Epoch: 89
+Epoch: 90
+Epoch 90/120 | Train Loss: 0.24049577204620137 | Train Accuracy: 91.674 %
+Epoch 90/120 | Test Loss: 0.402843758843507 | Test Accuracy: 87.09 %
+Epoch: 91
+Epoch: 92
+Epoch: 93
+Epoch: 94
+Epoch: 95
+Epoch: 96
+Epoch: 97
+Epoch: 98
+Epoch: 99
+Epoch: 100
+Epoch 100/120 | Train Loss: 0.1375764908502474 | Train Accuracy: 95.464 %
+Epoch 100/120 | Test Loss: 0.3058750492751978 | Test Accuracy: 90.33 %
+Epoch: 101
+Epoch: 102
+Epoch: 103
+Epoch: 104
+Epoch: 105
+Epoch: 106
+Epoch: 107
+Epoch: 108
+Epoch: 109
+Epoch: 110
+Epoch 110/120 | Train Loss: 0.12203529192244306 | Train Accuracy: 96.018 %
+Epoch 110/120 | Test Loss: 0.30685919020206304 | Test Accuracy: 90.63 %
+Epoch: 111
+Epoch: 112
+Epoch: 113
+Epoch: 114
+Epoch: 115
+Epoch: 116
+Epoch: 117
+Epoch: 118
+Epoch: 119
+Epoch: 120
+Epoch 120/120 | Train Loss: 0.11781941784922119 | Train Accuracy: 96.142 %
+Epoch 120/120 | Test Loss: 0.3066282143733304 | Test Accuracy: 90.57 %
+Finished Training
+
+Saved model weights to weights/2_weights.pth
+Final Training Accuracy:  96.142 % | Final Test Accuracy:  90.570 %
+
+This accuracy is achieved with the following Settings
+Number of Blocks in each layer: [2, 2, 2, 2]
+ Number of Channels in each layer: [54, 96, 188, 324]
+Optimiser: adagrad
+ Learning Rate: 0.1
+Files already downloaded and verified
+Files already downloaded and verified
+Started Training
+
+Epoch: 1
+Epoch: 2
+Epoch: 3
+Epoch: 4
+Epoch: 5
+Epoch: 6
+Epoch: 7
+Epoch: 8
+Epoch: 9
+Epoch: 10
+Epoch 10/120 | Train Loss: 0.346829079987143 | Train Accuracy: 88.002 %
+Epoch 10/120 | Test Loss: 1.1854669311244017 | Test Accuracy: 67.53 %
+Epoch: 11
+Epoch: 12
+Epoch: 13
+Epoch: 14
+Epoch: 15
+Epoch: 16
+Epoch: 17
+Epoch: 18
+Epoch: 19
+Epoch: 20
+Epoch 20/120 | Train Loss: 0.20228383164195454 | Train Accuracy: 93.082 %
+Epoch 20/120 | Test Loss: 0.48530613578808535 | Test Accuracy: 85.7 %
+Epoch: 21
+Epoch: 22
+Epoch: 23
+Epoch: 24
+Epoch: 25
+Epoch: 26
+Epoch: 27
+Epoch: 28
+Epoch: 29
+Epoch: 30
+Epoch 30/120 | Train Loss: 0.13094762781315752 | Train Accuracy: 95.456 %
+Epoch 30/120 | Test Loss: 0.35710848364860387 | Test Accuracy: 89.72 %
+Epoch: 31
+Epoch: 32
+Epoch: 33
+Epoch: 34
+Epoch: 35
+Epoch: 36
+Epoch: 37
+Epoch: 38
+Epoch: 39
+Epoch: 40
+Epoch 40/120 | Train Loss: 0.09331281086110779 | Train Accuracy: 96.634 %
+Epoch 40/120 | Test Loss: 0.545440208000742 | Test Accuracy: 86.29 %
+Epoch: 41
+Epoch: 42
+Epoch: 43
+Epoch: 44
+Epoch: 45
+Epoch: 46
+Epoch: 47
+Epoch: 48
+Epoch: 49
+Epoch: 50
+Epoch 50/120 | Train Loss: 0.07215103923874286 | Train Accuracy: 97.488 %
+Epoch 50/120 | Test Loss: 0.3976298316743723 | Test Accuracy: 89.27 %
+Epoch: 51
+Epoch: 52
+Epoch: 53
+Epoch: 54
+Epoch: 55
+Epoch: 56
+Epoch: 57
+Epoch: 58
+Epoch: 59
+Epoch: 60
+Epoch 60/120 | Train Loss: 0.060946500984013385 | Train Accuracy: 97.922 %
+Epoch 60/120 | Test Loss: 0.3886809118305612 | Test Accuracy: 89.7 %
+Epoch: 61
+Epoch: 62
+Epoch: 63
+Epoch: 64
+Epoch: 65
+Epoch: 66
+Epoch: 67
+Epoch: 68
+Epoch: 69
+Epoch: 70
+Epoch 70/120 | Train Loss: 0.05044162716321133 | Train Accuracy: 98.314 %
+Epoch 70/120 | Test Loss: 0.39567864217623405 | Test Accuracy: 89.85 %
+Epoch: 71
+Epoch: 72
+Epoch: 73
+Epoch: 74
+Epoch: 75
+Epoch: 76
+Epoch: 77
+Epoch: 78
+Epoch: 79
+Epoch: 80
+Epoch 80/120 | Train Loss: 0.05104635573585358 | Train Accuracy: 98.22 %
+Epoch 80/120 | Test Loss: 0.454554980537694 | Test Accuracy: 88.75 %
+Epoch: 81
+Epoch: 82
+Epoch: 83
+Epoch: 84
+Epoch: 85
+Epoch: 86
+Epoch: 87
+Epoch: 88
+Epoch: 89
+Epoch: 90
+Epoch 90/120 | Train Loss: 0.04759765479742261 | Train Accuracy: 98.346 %
+Epoch 90/120 | Test Loss: 0.41498509324659966 | Test Accuracy: 89.88 %
+Epoch: 91
+Epoch: 92
+Epoch: 93
+Epoch: 94
+Epoch: 95
+Epoch: 96
+Epoch: 97
+Epoch: 98
+Epoch: 99
+Epoch: 100
+Epoch 100/120 | Train Loss: 0.0048530704460626045 | Train Accuracy: 99.94 %
+Epoch 100/120 | Test Loss: 0.25566370775745173 | Test Accuracy: 93.45 %
+Epoch: 101
+Epoch: 102
+Epoch: 103
+Epoch: 104
+Epoch: 105
+Epoch: 106
+Epoch: 107
+Epoch: 108
+Epoch: 109
+Epoch: 110
+Epoch 110/120 | Train Loss: 0.0037362829877642433 | Train Accuracy: 99.946 %
+Epoch 110/120 | Test Loss: 0.2536982002513851 | Test Accuracy: 93.46 %
+Epoch: 111
+Epoch: 112
+Epoch: 113
+Epoch: 114
+Epoch: 115
+Epoch: 116
+Epoch: 117
+Epoch: 118
+Epoch: 119
+Epoch: 120
+Epoch 120/120 | Train Loss: 0.003352046399639295 | Train Accuracy: 99.97 %
+Epoch 120/120 | Test Loss: 0.25641280507289205 | Test Accuracy: 93.64 %
+Finished Training
+
+Saved model weights to weights/3_weights.pth
+Final Training Accuracy:  99.970 % | Final Test Accuracy:  93.640 %
+
+This accuracy is achieved with the following Settings
+Number of Blocks in each layer: [2, 2, 2, 2]
+ Number of Channels in each layer: [54, 96, 188, 324]
+Optimiser: adadelta
+ Learning Rate: 0.1
+Files already downloaded and verified
+Files already downloaded and verified
+Started Training
+
+Epoch: 1
+Epoch: 2
+Epoch: 3
+Epoch: 4
+Epoch: 5
+Epoch: 6
+Epoch: 7
+Epoch: 8
+Epoch: 9
+Epoch: 10
+Epoch 10/120 | Train Loss: 0.4435144106064306 | Train Accuracy: 84.926 %
+Epoch 10/120 | Test Loss: 0.5198045207816324 | Test Accuracy: 82.18 %
+Epoch: 11
+Epoch: 12
+Epoch: 13
+Epoch: 14
+Epoch: 15
+Epoch: 16
+Epoch: 17
+Epoch: 18
+Epoch: 19
+Epoch: 20
+Epoch 20/120 | Train Loss: 0.31650528056389843 | Train Accuracy: 89.304 %
+Epoch 20/120 | Test Loss: 0.40819582210224903 | Test Accuracy: 86.73 %
+Epoch: 21
+Epoch: 22
+Epoch: 23
+Epoch: 24
+Epoch: 25
+Epoch: 26
+Epoch: 27
+Epoch: 28
+Epoch: 29
+Epoch: 30
+Epoch 30/120 | Train Loss: 0.2737855187157536 | Train Accuracy: 90.646 %
+Epoch 30/120 | Test Loss: 0.3984309872434397 | Test Accuracy: 87.23 %
+Epoch: 31
+Epoch: 32
+Epoch: 33
+Epoch: 34
+Epoch: 35
+Epoch: 36
+Epoch: 37
+Epoch: 38
+Epoch: 39
+Epoch: 40
+Epoch 40/120 | Train Loss: 0.24344739441752739 | Train Accuracy: 91.7 %
+Epoch 40/120 | Test Loss: 0.3839226642706592 | Test Accuracy: 87.94 %
+Epoch: 41
+Epoch: 42
+Epoch: 43
+Epoch: 44
+Epoch: 45
+Epoch: 46
+Epoch: 47
+Epoch: 48
+Epoch: 49
+Epoch: 50
+Epoch 50/120 | Train Loss: 0.23423658454280985 | Train Accuracy: 91.976 %
+Epoch 50/120 | Test Loss: 0.4401086914311549 | Test Accuracy: 86.23 %
+Epoch: 51
+Epoch: 52
+Epoch: 53
+Epoch: 54
+Epoch: 55
+Epoch: 56
+Epoch: 57
+Epoch: 58
+Epoch: 59
+Epoch: 60
+Epoch 60/120 | Train Loss: 0.22419029935394102 | Train Accuracy: 92.4 %
+Epoch 60/120 | Test Loss: 0.3569218258664107 | Test Accuracy: 88.54 %
+Epoch: 61
+Epoch: 62
+Epoch: 63
+Epoch: 64
+Epoch: 65
+Epoch: 66
+Epoch: 67
+Epoch: 68
+Epoch: 69
+Epoch: 70
+Epoch 70/120 | Train Loss: 0.2119521060220116 | Train Accuracy: 92.69 %
+Epoch 70/120 | Test Loss: 0.374966191305856 | Test Accuracy: 88.46 %
+Epoch: 71
+Epoch: 72
+Epoch: 73
+Epoch: 74
+Epoch: 75
+Epoch: 76
+Epoch: 77
+Epoch: 78
+Epoch: 79
+Epoch: 80
+Epoch 80/120 | Train Loss: 0.20612183396163805 | Train Accuracy: 92.998 %
+Epoch 80/120 | Test Loss: 0.3606183982104253 | Test Accuracy: 88.62 %
+Epoch: 81
+Epoch: 82
+Epoch: 83
+Epoch: 84
+Epoch: 85
+Epoch: 86
+Epoch: 87
+Epoch: 88
+Epoch: 89
+Epoch: 90
+Epoch 90/120 | Train Loss: 0.20727113922081336 | Train Accuracy: 92.952 %
+Epoch 90/120 | Test Loss: 0.3464567420209289 | Test Accuracy: 88.98 %
+Epoch: 91
+Epoch: 92
+Epoch: 93
+Epoch: 94
+Epoch: 95
+Epoch: 96
+Epoch: 97
+Epoch: 98
+Epoch: 99
+Epoch: 100
+Epoch 100/120 | Train Loss: 0.6936428033177505 | Train Accuracy: 76.326 %
+Epoch 100/120 | Test Loss: 1.2238155960277388 | Test Accuracy: 60.91 %
+Epoch: 101
+Epoch: 102
+Epoch: 103
+Epoch: 104
+Epoch: 105
+Epoch: 106
+Epoch: 107
+Epoch: 108
+Epoch: 109
+Epoch: 110
+Epoch 110/120 | Train Loss: 0.391887422260421 | Train Accuracy: 86.518 %
+Epoch 110/120 | Test Loss: 0.445338912355672 | Test Accuracy: 85.23 %
+Epoch: 111
+Epoch: 112
+Epoch: 113
+Epoch: 114
+Epoch: 115
+Epoch: 116
+Epoch: 117
+Epoch: 118
+Epoch: 119
+Epoch: 120
+Epoch 120/120 | Train Loss: 0.3304164036155662 | Train Accuracy: 88.682 %
+Epoch 120/120 | Test Loss: 0.38825318184058377 | Test Accuracy: 87.19 %
+Finished Training
+
+Saved model weights to weights/4_weights.pth
+Final Training Accuracy:  88.682 % | Final Test Accuracy:  87.190 %
+
+This accuracy is achieved with the following Settings
+Number of Blocks in each layer: [2, 2, 2, 2]
+ Number of Channels in each layer: [54, 96, 188, 324]
+Optimiser: adam
+ Learning Rate: 0.1

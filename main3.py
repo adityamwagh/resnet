@@ -194,14 +194,14 @@ if __name__ == "__main__":
             transforms.RandomRotation(30),
             transforms.RandomCrop((32,32), padding=4),
             transforms.RandomHorizontalFlip(p=0.5),
-            transforms.RandomAutoContrast(p=0.5),
+            transforms.RandomAutocontrast(p=0.5),
             transforms.ToTensor(),
             transforms.Normalize(mean=mean, std=std),
         ])
 
     test_transforms = transforms.Compose([transforms.ToTensor(), transforms.Normalize(mean=mean, std=std)])
 
-    train_data = torchvision.datasets.CIFAR10(data_path, train=True, transform=train_transforms, download=True)
+    train_data = torchvision.datasets.CIFAR10(data_path, train=True, transform=train_transforms3, download=True)
     test_data = torchvision.datasets.CIFAR10(data_path, train=False, transform=test_transforms, download=True)
 
     train_dataloader = DataLoader(train_data, batch_size=128, shuffle=True, num_workers=2)
