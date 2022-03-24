@@ -39,7 +39,7 @@ conda install pytorch torchvision matplotlib cudatoolkit=11.3 -c pytorch
 ```
     
 ## Usage
- (Pending)
+
 | Argument                              | Type       | Default value  | Description                                           |
 | :-------------------------------------| :----------| :--------------| :-----------------------------------------------------|
 | `-en` or `--experiment-number`        | `required` | `required`     | **Required**. Your API key                            |
