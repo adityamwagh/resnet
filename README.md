@@ -42,7 +42,7 @@ conda install pytorch torchvision matplotlib cudatoolkit=11.3 -c pytorch
 
 | Argument                              | Type       | Default value  | Description                                           |
 | :-------------------------------------| :----------| :--------------| :-----------------------------------------------------|
-| `-en` or `--experiment-number`        | `required` | `required`     | **Required**. Your API key                            |
+| `-en` or `--experiment-number`        | `required` | `1`            | **Required**. Your API key                            |
 | `-e`  or `--epochs`                   | `required` | `120`          | **Required**. Your API key                            |
 | `-o`  or `--optimizer`                | `required` | `N/A`          | **Required**. Your API key                            |
 | `-d`  or `--device`                   | `required` | `gpu`          | **Required**. Your API key                            |
